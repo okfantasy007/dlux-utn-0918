@@ -1,0 +1,186 @@
+<!--
+
+* Copyright (c) 2014 Cisco Systems, Inc. and others.  All rights reserved.
+
+*
+
+* This program and the accompanying materials are made available under the
+
+* terms of the Eclipse Public License v1.0 which accompanies this distribution,
+
+* and is available at http://www.eclipse.org/legal/epl-v10.html
+
+-->
+<div class="row-fluid" style="height:51px; background-color:#05171e;">
+    <ul class="nav nav-pills ng-scope" style="padding-top: 12px;">
+        <li class="active"><a href="" data-toggle="pill" ng-click="toggle('eline')">业务模板</a></li>
+    </ul>
+</div>
+<div style="width:100%;height:516px;overflow:auto;overflow-x:hidden;background-color:#ddd;">
+    <div>
+        <div align="center">
+            <div style="width:100%;margin-left:2px;margin-right:4px;padding-top:2px;" align="left" ng-model="elineModel">
+                <div style="width:70%;height:510px;border:1px solid #ddd;float:left;margin:1px 1px 0px 1px;background-color:#fff;">
+                    <div class="regTabs" align="center" style="margin-top:5px;">
+                        <div style="background-color:#fff;width:94%;">
+                            <ul class="nav navbar-nav">
+                                <li style="font-family:'微软雅黑';"><a style="font-weight:500;">基站模板</a></li>
+                                <li style="font-family:'微软雅黑';"><a style="font-weight:500;">集客模板</a></li>
+                                <li class="active" style="font-family:'微软雅黑';"><a style="text-decoration:underline;color:orange;font-size:large;">自定义模板</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <br/>
+                    <hr/>
+                    <div class="row">
+                        <div class="col-md-2" style="line-height:30px;text-align:center;">
+                            <span class="error" style="color:red;">* </span>
+                            <label class="ng-binding textLabel" style="font-family:'微软雅黑';">业务名称</label>
+                        </div>
+                        <div class="col-md-3" style="margin-left:-25px">
+                            <input class="ng-binding form-control inputText" ng-model="elineModel.name" style="width:200px;" type="text" />
+                        </div>
+                        <label class="errorlabel col-md-1"></label>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-2" style="line-height:30px;text-align: center;">
+                            <label class="ng-binding textLabel" style="font-family:'微软雅黑';">业务备注信息</label>
+                        </div>
+                        <div class="col-md-3" style="margin-left:-25px">
+                            <input class="ng-binding form-control inputText" style="width:200px;" type="text" />
+                        </div>
+                        <label class="errorlabel col-md-1"></label>
+                    </div>
+                    <br/>
+                    <div class="row">
+                        <div class="col-md-2" style="line-height:30px;text-align: center;">
+                            <label class="ng-binding textLabel" style="font-family:'微软雅黑';">大客户</label>
+                        </div>
+                        <div class="col-md-3" style="margin-left:-25px">
+                            <input class="ng-binding form-control inputText" style="width:200px;" type="text" />
+                        </div>
+                        <label class="errorlabel col-md-1"></label>
+                        <div class="col-md-1"></div>
+                        <div class="col-md-2" style="line-height:30px;text-align: center;">
+                            <label class="ng-binding textLabel" style="font-family:'微软雅黑';">客户经理</label>
+                        </div>
+                        <div class="col-md-3" style="margin-left:-25px">
+                            <input class="ng-binding form-control inputText" style="width:200px;" type="text" />
+                        </div>
+                        <label class="errorlabel col-md-1"></label>
+                    </div>
+                    <hr style="width:94%;align:center;" />
+                    <div style="width:84%;align:center;margin:20px 40px 20px 80px;">
+                        <div style="width:2%;height:80%;float:left;">
+                            <a>&nbsp;</a>
+                        </div>
+                        <div style="width:28%;height:80%;float:left;">
+                            <div class="panel panel-warning" ng-click="showModuleDetail(1)">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title" style="font-family:'微软雅黑';">模板1</h3>
+                                </div>
+                                <div class="panel-body" style="font-family:'微软雅黑';font-size: small;">
+                                    <p>名称：PW冗余一源两宿</p>
+                                    <p>备注：业务保护创建...</p>
+                                    <p>其他：</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width:2%;height:80%;float:left;">
+                            <a>&nbsp;</a>
+                        </div>
+                        <div style="width:28%;height:80%;float:left;">
+                            <div class="panel panel-warning" ng-click="showModuleDetail(2)">
+                                <div class="panel-heading">
+                                    <h3 class="panel-title" style="font-family:'微软雅黑';">模板2</h3>
+                                </div>
+                                <div class="panel-body" style="font-family:'微软雅黑';font-size: small;">
+                                    <p>名称：PW冗余一源一宿</p>
+                                    <p>备注：业务保护创建...</p>
+                                    <p>其他：</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width:2%;height:80%;float:left;">
+                            <a>&nbsp;</a>
+                        </div>
+                        <div style="width:171.41px;height:160px;float:left;text-align: center;border: solid 2px #faebcc;">
+                            <p style="font-size: 120px;color: #ddd;margin-top:65px">+</p>
+                        </div>
+                        <div>
+                            <a>&nbsp;</a>
+                        </div>
+                        <div class="" style="position: absolute;bottom: 14px;left: 650px;">
+                            <button class="col-md-2 btn btn-warning" style="font-size: inherit;font-family:'微软雅黑';width: inherit;" ng-click="createElineDetail()">详细配置</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="width:29.2%;height:510px;border:1px solid #ddd;float:left;background-color:#fff;margin:1px 3px 2px 1px;position: relative;">
+                <div class="regTabs" align="center" style="margin-top:5px;">
+                    <div style="background-color:#fff;width:94%;">
+                        <div style="background-color:#fff;width:94%;">
+                            <ul class="nav navbar-nav">
+                                <li style="font-family:'微软雅黑';"><a style="font-weight:500;">业务信息</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <hr/>
+                <div class="row">
+                    <label class="col-md-1"></label>
+                    <label class="name col-md-4" style="font-size: inherit;font-family:'微软雅黑';text-align:left;">用户标识:</label>
+                    <span class="value col-md-4" style="font-family:'微软雅黑';font-size: inherit;line-height: 2.6;text-align:left;">{{elineModel.name}}</span>
+                </div>
+                <div class="row">
+                    <label class="col-md-1"></label>
+                    <label class="name col-md-4" style="font-size: inherit;font-family:'微软雅黑';text-align:left;">类型:</label>
+                    <span class="value col-md-4" style="font-family:'微软雅黑';font-size: inherit;line-height: 2.6;text-align:left;">{{elineModel.elineType}}</span>
+                </div>
+                <div class="row">
+                    <label class="col-md-1"></label>
+                    <label class="name col-md-4" style="font-size: inherit;font-family:'微软雅黑';text-align:left;">源节点:</label>
+                    <span class="value col-md-4" style="font-family:'微软雅黑';font-size: inherit;line-height: 2.6;text-align:left;">{{elineModel.srcNeId}}</span>
+                </div>
+                <div class="row">
+                    <label class="col-md-1"></label>
+                    <label class="name col-md-4" style="font-size: inherit;font-family:'微软雅黑';text-align:left;">宿节点:</label>
+                    <span class="value col-md-4" style="font-family:'微软雅黑';font-size: inherit;line-height: 2.6;text-align:left;">{{elineModel.desNeId}}</span>
+                </div>
+                <div class="row">
+                    <label class="col-md-1"></label>
+                    <label class="name col-md-4" style="font-size: inherit;font-family:'微软雅黑';text-align:left;">源端口:</label>
+                    <span class="value col-md-4" style="font-family:'微软雅黑';font-size: inherit;line-height: 2.6;text-align:left;">{{elineModel.srcLtpId}}</span>
+                </div>
+                <div class="row">
+                    <label class="col-md-1"></label>
+                    <label class="name col-md-4" style="font-size: inherit;font-family:'微软雅黑';text-align:left;">宿端口:</label>
+                    <span class="value col-md-4" style="font-family:'微软雅黑';font-size: inherit;line-height: 2.6;text-align:left;">{{elineModel.desLtpId}}</span>
+                </div>
+                <div class="row">
+                    <label class="col-md-1"></label>
+                    <label class="name col-md-4" style="font-size: inherit;font-family:'微软雅黑';text-align:left;">源VLAN:</label>
+                    <span class="value col-md-4" style="font-family:'微软雅黑';font-size: inherit;line-height: 2.6;text-align:left;">{{elineModel.srcVlan}}</span>
+                </div>
+                <div class="row">
+                    <label class="col-md-1"></label>
+                    <label class="name col-md-4" style="font-size: inherit;font-family:'微软雅黑';text-align:left;">宿VLAN:</label>
+                    <span class="value col-md-4" style="font-family:'微软雅黑';font-size: inherit;line-height: 2.6;text-align:left;">{{elineModel.desVlan}}</span>
+                </div>
+                <div class="row">
+                    <label class="col-md-1"></label>
+                    <label class="name col-md-4" style="font-size: inherit;font-family:'微软雅黑';text-align:left;">保护类型:</label>
+                    <span class="value col-md-4" style="font-family:'微软雅黑';font-size: inherit;line-height: 2.6;text-align:left;">{{elineModel.protectType}}</span>
+                </div>
+                <div class="row">
+                    <label class="col-md-1"></label>
+                    <label class="name col-md-4" style="font-size: inherit;font-family:'微软雅黑';text-align:left;">oam类型:</label>
+                    <span class="value col-md-4" style="font-family:'微软雅黑';font-size: inherit;line-height: 2.6;text-align:left;">{{elineModel.oamType}}</span>
+                </div>
+                <div class="" style="position: absolute;bottom: 10px;right: 10px;">
+                    <button class="col-md-2 btn btn-warning" style="font-size: inherit;font-family:'微软雅黑';width: inherit;margin-left:5px" ng-click="createElineQuik()">下发业务</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
